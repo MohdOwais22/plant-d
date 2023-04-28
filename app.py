@@ -56,5 +56,5 @@ def submit():
             'supplement_image_url': supplement_image_url,
             'supplement_buy_link': supplement_buy_link
         })
-    if __name__ == '__main__':
-        app.run(debug=True, port=8000)
+if __name__ == '__main__':
+    app.run(debug=True, port=8000)
