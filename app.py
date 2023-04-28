@@ -31,13 +31,17 @@ app = Flask(__name__)
 def home_page():
     return "working"
 
-@app.route('/submit', methods=['GET', 'POST'])
+@app.route('/api/start')
+def start():
+    return "start"
+
+@app.route('/api/submit', methods=['GET', 'POST'])
 def submit():
     if request.method == 'POST':
-        image = request.files['image']
-        filename = image.filename
+        # image = request.files['image']
+        filename = "apple_black_rot.JPG"
         file_path = os.path.join('static/uploads', filename)
-        image.save(file_path)
+        # image.save(file_path)
         print(file_path)
         pred = prediction(file_path)
         title = disease_info['disease_name'][pred]
